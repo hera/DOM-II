@@ -1,17 +1,3 @@
-/*
-
-* [x] `mouseover`
-* [x] `keydown`
-* [ ] `wheel`
-* [ ] `drag / drop`
-* [x] `load`
-* [ ] `focus`
-* [ ] `resize`
-* [ ] `scroll`
-* [ ] `select`
-* [ ] `dblclick`
-
-*/
 
 // load
 
@@ -111,4 +97,24 @@ busImage.addEventListener('dblclick', (event) => {
         currentImage++;
     }
     busImage.setAttribute('src', imageSources[currentImage]);
+});
+
+
+// scroll
+
+let progressBar = document.createElement('div');
+
+progressBar.style.position = 'fixed';
+progressBar.style.left = 0;
+progressBar.style.top = '90px';
+progressBar.style.height = '5px'
+progressBar.style.width = '400px';
+progressBar.style.backgroundColor = 'orange';
+document.body.prepend(progressBar);
+
+
+window.addEventListener('scroll', (event) => {
+    let htmlTag = document.documentElement;
+    let percentage = (window.scrollY + htmlTag.clientHeight) / htmlTag.offsetHeight * 100;
+    progressBar.style.width = `${percentage}vw`
 });
