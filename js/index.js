@@ -26,6 +26,32 @@ window.addEventListener('load', (event) => {
 });
 
 
+// resize
+
+let dimensionsDiv = document.createElement('div');
+dimensionsDiv.style.width = '250px';
+dimensionsDiv.style.backgroundColor = '#444';
+dimensionsDiv.style.color = 'white';
+dimensionsDiv.style.position = 'fixed';
+dimensionsDiv.style.borderRadius = '10px';
+dimensionsDiv.style.top = '20px';
+dimensionsDiv.style.right = '20px';
+dimensionsDiv.style.transition = 'opacity 0.4s ease';
+dimensionsDiv.style.opacity = '0';
+dimensionsDiv.style.fontSize = '2rem';
+dimensionsDiv.style.padding = '2rem';
+
+document.body.appendChild(dimensionsDiv);
+
+window.addEventListener('resize', (event) => {
+    dimensionsDiv.style.opacity = 1;
+    dimensionsDiv.textContent = `${window.innerWidth} x ${window.innerHeight}px`;
+    setTimeout(() => {
+        dimensionsDiv.style.opacity = '0';
+    }, 3000);
+});
+
+
 // mouseover + mouseout
 
 let images = document.querySelectorAll('img');
