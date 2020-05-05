@@ -4,7 +4,7 @@
 * [x] `keydown`
 * [ ] `wheel`
 * [ ] `drag / drop`
-* [ ] `load`
+* [x] `load`
 * [ ] `focus`
 * [ ] `resize`
 * [ ] `scroll`
@@ -73,4 +73,16 @@ window.addEventListener('keydown', (event) => {
         }
         busImage.setAttribute('src', imageSources[currentImage]);
     }
+});
+
+
+// double click
+
+busImage.addEventListener('dblclick', (event) => {
+    if (currentImage === imageSources.length - 1) {
+        currentImage = 0;
+    } else {
+        currentImage++;
+    }
+    busImage.setAttribute('src', imageSources[currentImage]);
 });
