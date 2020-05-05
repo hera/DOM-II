@@ -158,3 +158,15 @@ let navLinks = document.querySelectorAll('.nav-link');
 for (let link of navLinks) {
     link.addEventListener('click', (event) => event.preventDefault());
 }
+
+
+// focus 
+
+for (let link of navLinks) {
+    link.addEventListener('focus', (event) => {
+        link.style.color = "red";
+        setTimeout(() => {
+            link.style.color = "initial";
+        }, 1000);
+    });
+}
