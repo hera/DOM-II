@@ -127,3 +127,14 @@ let buttons = document.querySelectorAll('.btn');
 for (let button of buttons) {
     button.addEventListener('click', () => alert("You've signed up!"));
 }
+
+
+// copy
+
+function messageCopied(selection) {
+    alert(`You've copied: ${selection}`);
+}
+
+window.addEventListener('copy', (event) => {
+    messageCopied(document.getSelection().toString());
+});
