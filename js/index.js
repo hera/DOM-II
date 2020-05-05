@@ -120,12 +120,23 @@ window.addEventListener('scroll', (event) => {
 });
 
 
-// click
+// click + propagation
 
 let buttons = document.querySelectorAll('.btn');
 
 for (let button of buttons) {
-    button.addEventListener('click', () => alert("You've signed up!"));
+    button.addEventListener('click', (event) => {
+        event.currentTarget.style.backgroundColor = 'orange';
+        // event.stopPropagation();
+    });
+}
+
+let destinations = document.querySelectorAll('.destination');
+
+for (let destination of destinations) {
+    destination.addEventListener('click', (event) => {
+        event.currentTarget.style.backgroundColor = 'orange';
+    });
 }
 
 
