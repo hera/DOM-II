@@ -1,7 +1,7 @@
 /*
 
 * [x] `mouseover`
-* [ ] `keydown`
+* [x] `keydown`
 * [ ] `wheel`
 * [ ] `drag / drop`
 * [ ] `load`
@@ -12,6 +12,18 @@
 * [ ] `dblclick`
 
 */
+
+// load
+
+document.body.style.opacity = 0;
+
+window.addEventListener('load', (event) => {
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 1s ease';
+        document.body.style.opacity = 1;
+    }, 1000);
+    
+});
 
 
 // mouseover + mouseout
