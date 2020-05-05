@@ -118,3 +118,12 @@ window.addEventListener('scroll', (event) => {
     let percentage = (window.scrollY + htmlTag.clientHeight) / htmlTag.offsetHeight * 100;
     progressBar.style.width = `${percentage}vw`
 });
+
+
+// click
+
+let buttons = document.querySelectorAll('.btn');
+
+for (let button of buttons) {
+    button.addEventListener('click', () => alert("You've signed up!"));
+}
