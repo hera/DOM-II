@@ -149,3 +149,12 @@ function messageCopied(selection) {
 window.addEventListener('copy', (event) => {
     messageCopied(document.getSelection().toString());
 });
+
+
+// prevent default task
+
+let navLinks = document.querySelectorAll('.nav-link');
+
+for (let link of navLinks) {
+    link.addEventListener('click', (event) => event.preventDefault());
+}
